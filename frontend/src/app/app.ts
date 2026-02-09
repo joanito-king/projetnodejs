@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
+import { ApiService } from './services/api.service';
 
 @Component({
   selector: 'app-root',
@@ -8,5 +9,12 @@ import { RouterOutlet } from '@angular/router';
   template: `<router-outlet></router-outlet>`,
   styleUrl: './app.css'
 })
-export class App {}
+export class App implements OnInit {
+  constructor(private api: ApiService) {}
+
+  ngOnInit(): void {
+    // Ensure we try to restore user on app start (persistence on refresh)
+    try { this.api.checkUser().subscribe(() => {}, () => {}); } catch {}
+  }
+}
 
