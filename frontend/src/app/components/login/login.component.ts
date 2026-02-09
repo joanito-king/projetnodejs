@@ -12,8 +12,7 @@ import { ApiService } from '../../services/api.service';
     <div class="bg">
       <div class="back-btn" (click)="goBack()">←</div>
       <div class="card">
-        <div class="logo">Medi<span>Sync</span></div>
-        <h3 class="subtitle">Espace Secrétariat</h3>
+        <div class="logo">Victoria<span>Clinic</span></div>
 
         <form (ngSubmit)="login()" #loginForm="ngForm" class="form">
           <div class="input">
@@ -40,7 +39,7 @@ import { ApiService } from '../../services/api.service';
       display: flex;
       align-items: center;
       justify-content: center;
-      background-image: linear-gradient(120deg, rgba(10,78,165,0.6), rgba(118,75,162,0.6)), url('/assets/hospital.jpg');
+      background-image: linear-gradient(135deg, rgba(124,58,237,0.75), rgba(168,85,247,0.75)), url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800"><defs><filter id="shadow"><feGaussianBlur in="SourceGraphic" stdDeviation="3"/></filter></defs><rect width="1200" height="800" fill="%23111"/><g filter="url(%23shadow)" opacity="0.3"><rect x="100" y="120" width="280" height="500" fill="%23555"/><polygon points="100,120 240,50 380,120" fill="%23444"/><circle cx="200" cy="250" r="8" fill="%23999"/><circle cx="200" cy="300" r="8" fill="%23999"/><circle cx="200" cy="350" r="8" fill="%23999"/><circle cx="200" cy="400" r="8" fill="%23999"/><circle cx="320" cy="250" r="8" fill="%23999"/><circle cx="320" cy="300" r="8" fill="%23999"/><circle cx="320" cy="350" r="8" fill="%23999"/><circle cx="320" cy="400" r="8" fill="%23999"/><rect x="550" y="80" width="320" height="580" fill="%23555"/><polygon points="550,80 710,0 870,80" fill="%23444"/><circle cx="630" cy="200" r="8" fill="%23999"/><circle cx="630" cy="280" r="8" fill="%23999"/><circle cx="630" cy="360" r="8" fill="%23999"/><circle cx="790" cy="200" r="8" fill="%23999"/><circle cx="790" cy="280" r="8" fill="%23999"/><circle cx="790" cy="360" r="8" fill="%23999"/><rect x="900" y="250" width="240" height="370" fill="%23555"/><polygon points="900,250 1020,200 1140,250" fill="%23444"/><circle cx="970" cy="350" r="8" fill="%23999"/><circle cx="970" cy="430" r="8" fill="%23999"/><circle cx="1070" cy="350" r="8" fill="%23999"/><circle cx="1070" cy="430" r="8" fill="%23999"/></g></svg>');
       background-size: cover;
       background-position: center;
       padding: 40px;
@@ -75,9 +74,8 @@ import { ApiService } from '../../services/api.service';
       backdrop-filter: blur(8px);
     }
 
-    .logo{ font-size:34px; font-weight:700; margin-bottom:6px; }
-    .logo span{ color: #2fe0ff; }
-    .subtitle{ margin:0 0 18px 0; opacity:0.9; }
+    .logo{ font-size:42px; font-weight:700; margin-bottom:30px; letter-spacing:0.3px; text-shadow: 0 2px 8px rgba(0,0,0,0.3); }
+    .logo span{ color: #a855f7; font-weight:800; }
 
     .form{ display:flex; flex-direction:column; gap:14px; margin-top:10px; }
     .input input{
@@ -85,7 +83,9 @@ import { ApiService } from '../../services/api.service';
       font-size:15px; box-sizing:border-box; background: rgba(255,255,255,0.12); color: white;
     }
 
-    .btn{ margin-top:6px; padding:14px; border-radius:30px; border:none; font-weight:700; background: linear-gradient(90deg,#20c3ff,#6b6bff); color:#06263a; cursor:pointer; }
+    .btn{ margin-top:8px; padding:14px; border-radius:30px; border:none; font-weight:700; font-size:15px; letter-spacing:0.5px; background: linear-gradient(135deg, #a855f7, #7c3aed); color: white; cursor:pointer; transition: all 0.3s; box-shadow: 0 4px 20px rgba(168,85,247,0.4); }
+    .btn:hover:not(:disabled) { transform: translateY(-2px); box-shadow: 0 6px 30px rgba(168,85,247,0.6); }
+    .btn:disabled { opacity: 0.6; cursor: not-allowed; }
 
     .error{ margin-top:14px; color:#ffdcdc; background: rgba(255,0,0,0.06); padding:10px; border-radius:8px; }
 
